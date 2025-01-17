@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Run and Jump{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/index.js' %}" defer></script>
+</head>
+<body>
+    {% comment %} <header>
+        <h1>Run and Jump Game</h1>
+    </header> {% endcomment %}
+
+    <div class="content">
+        {% block content %}
+        <!-- Child template content will be inserted here -->
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Run and Jump Game. All rights reserved.</p>
+    </footer>
+</body>
+</html>

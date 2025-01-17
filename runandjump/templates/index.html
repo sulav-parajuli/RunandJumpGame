@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Welcome to Run and Jump{% endblock %} {% block content %}
+<div class="sky"></div>
+<div class="ground">
+    <div class="person">
+        <img src="{% static 'images/giphy.gif' %}" alt="Girl Image" />
+    </div>
+
+    <!-- Obstacles -->
+    <div class="obstacle"><img src="{% static 'images/chair.png' %}" /></div>
+    <div class="obstacle"></div>
+    <div class="obstacle"></div>
+    <!-- <div class="obstacle"></div> -->
+</div>
+
+<!-- Add a button to trigger the animation -->
+<div style="color: white; position: relative; bottom: 50px">
+    &nbsp;&nbsp;Use space key to play game and jump on obstacle.
+</div>
+{% endblock %}

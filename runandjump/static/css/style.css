@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.sky {
+    background: skyblue;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+}
+
+.ground {
+    background: green;
+    height: 20vh;
+    width: 100%;
+    position: relative;
+}
+
+.person {
+    position: absolute;
+    bottom: 14vh;
+    left: 50px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Smooth animation for movement */
+    transition: transform 1s linear;
+}
+
+
+/* Ensure the image inside person is properly sized */
+
+.person img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    /* Ensure the image covers the area without stretching */
+}
+
+
+/* Animation for running effect */
+
+@keyframes run {
+    0% {
+        left: 50px;
+    }
+    100% {
+        left: 100vw;
+        /* Move the person to the right of the screen */
+    }
+}
+
+@keyframes jumping {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-400px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.run {
+    animation: run 3s infinite linear;
+    /* Make the girl run continuously */
+}
+
+.jump {
+    animation: jumping 0.7s ease forwards;
+}
+
+
+/* Add some basic styling to the button to make it visible */
+
+button {
+    align-items: center;
+    text-align: center;
+    bottom: 60px;
+    left: 60px;
+    position: relative;
+    /* Position it inside the container */
+    z-index: 10;
+    /* Ensure it's above other elements */
+    padding: 10px 20px;
+    background-color: #4caf50;
+    /* Green background color */
+    color: white;
+    /* White text color */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #45a049;
+    /* Darker green when hovered */
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    left: 100%;
+    /* border-radius: 50%;
+    background: red; */
+    /* Start off-screen */
+    bottom: 130%;
+    /* bottom: 70%; */
+    animation: moveObstacle 2s infinite linear;
+}
+
+.obstacle img {
+    width: 130px;
+    height: 140px;
+    object-fit: cover;
+}
+
+@keyframes moveObstacle {
+    0% {
+        left: 100%;
+        /* Start from the right side of the screen */
+    }
+    50% {
+        left: 50%;
+        /* Move to the center of the screen */
+    }
+    100% {
+        left: -200px;
+        /* Move to the left until it's off-screen */
+    }
+}
