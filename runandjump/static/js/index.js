@@ -1,5 +1,12 @@
 // Flag to check if the game is over
 var gameOver = false;
+let score = 0;
+
+// Function to update the score
+function updateScore() {
+    score += 10; // Increment score
+    document.getElementById("score").innerText = score; // Update the score display
+}
 
 // Function to stop the game and remove all classes
 function stopGame() {
@@ -25,6 +32,8 @@ document.addEventListener("keydown", function(event) {
 
         // Add the 'jump' class to make the person jump
         person.classList.add("jump");
+        // If the player successfully avoids an obstacle update score:
+        updateScore();
 
         // Remove the 'jump' class after a certain time (for example, 500ms)
         setTimeout(function() {

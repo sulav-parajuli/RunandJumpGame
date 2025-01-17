@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block title %}Welcome to Run and Jump{% endblock %} {% block content %}
 <div class="sky"></div>
 <div class="ground">
+    <div class="score">Score: <span id="score">0</span></div>
     <div class="person">
         <img src="{% static 'images/giphy.gif' %}" alt="Girl Image" />
     </div>
