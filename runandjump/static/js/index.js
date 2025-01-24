@@ -32,8 +32,6 @@ document.addEventListener("keydown", function(event) {
 
         // Add the 'jump' class to make the person jump
         person.classList.add("jump");
-        // If the player successfully avoids an obstacle update score:
-        updateScore();
 
         // Remove the 'jump' class after a certain time (for example, 500ms)
         setTimeout(function() {
@@ -69,8 +67,17 @@ function checkCollision() {
 
             // Optionally, add logic to reset or restart the game here
         }
+
+        // Check if the person successfully passed the obstacle
+        if (
+            obstacleRect.right < personRect.left && // Obstacle is behind the person
+            !obstacle.classList.contains("scored") // Obstacle hasn't been scored yet
+        ) {
+            obstacle.classList.add("scored"); // Mark the obstacle as scored
+            updateScore(); // Update the score
+        }
     });
 }
 
 // Check for collisions every 50ms (can adjust for performance)
-setInterval(checkCollision, 50);
+setInterval(checkCollision, 50); 
