@@ -7,10 +7,19 @@
     </div>
 
     <!-- Obstacles -->
-    <div class="obstacle"><img src="{% static 'images/chair.png' %}" /></div>
+    <!-- <div class="obstacle"><img src="{% static 'images/chair.png' %}" /></div>
     <div class="obstacle"></div>
-    <div class="obstacle"></div>
+    <div class="obstacle"></div> -->
     <!-- <div class="obstacle"></div> -->
+     <!-- Play Again Button (initially hidden) -->
+      <p id="highest-score" style="position: absolute; bottom: 350px; left: 50%; transform: translate(-50%, -50%); font-size: 20px; padding: 10px 20px;"></p>
+      <h1 id="game-text" style="display: none; position: absolute; bottom: 400px; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px;">Run and Jump Game</h1>
+      <h3 id="your-score" style="display: none; position: absolute; bottom: 350px; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px;">Score: </h3>
+<button id="play-button" style="display: none; position: absolute; bottom: 300px; left: 50%; transform: translate(-50%, -50%); font-size: 20px; padding: 10px 20px;">
+    <img src="{% static 'images/play-button.gif' %}" alt="Play Icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;" />
+    Play Again
+</button>
+
 </div>
 
 <!-- Add a button to trigger the animation -->
